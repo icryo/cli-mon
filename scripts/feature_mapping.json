@@ -1,0 +1,99 @@
+{
+  "_description": "Track which upstream features have been ported, modified, or skipped",
+  "_legend": {
+    "ported": "Feature fully implemented in fork",
+    "modified": "Feature implemented with changes",
+    "skipped": "Intentionally not porting",
+    "pending": "To be reviewed/ported",
+    "partial": "Partially implemented"
+  },
+  "categories": {
+    "shell": {
+      "description": "Shell PTY and terminal execution",
+      "features": {
+        "pty-execution": {"status": "pending", "upstream_version": "0.10.0", "notes": ""},
+        "terminal-serializer": {"status": "pending", "upstream_version": "0.10.0", "notes": ""},
+        "binary-detection": {"status": "pending", "upstream_version": "0.10.0", "notes": ""},
+        "output-buffer-cap": {"status": "pending", "upstream_version": "0.10.0", "notes": "16MB limit"}
+      }
+    },
+    "input": {
+      "description": "Keyboard and mouse input handling",
+      "features": {
+        "alt-key-macos": {"status": "pending", "upstream_version": "0.10.0", "notes": "24+ character mappings"},
+        "mouse-sgr-format": {"status": "pending", "upstream_version": "0.15.0", "notes": ""},
+        "mouse-x11-fallback": {"status": "pending", "upstream_version": "0.15.0", "notes": ""}
+      }
+    },
+    "streaming": {
+      "description": "JSON streaming output",
+      "features": {
+        "stream-json-events": {"status": "pending", "upstream_version": "0.11.0", "notes": "INIT, MESSAGE, TOOL_USE, etc"},
+        "delta-streaming": {"status": "pending", "upstream_version": "0.11.0", "notes": ""}
+      }
+    },
+    "hooks": {
+      "description": "Hook system for extensibility",
+      "features": {
+        "hook-runner": {"status": "pending", "upstream_version": "0.13.0", "notes": ""},
+        "hook-planner": {"status": "pending", "upstream_version": "0.13.0", "notes": ""},
+        "hook-registry": {"status": "pending", "upstream_version": "0.13.0", "notes": "Project > User > System priority"},
+        "hook-aggregator": {"status": "pending", "upstream_version": "0.13.0", "notes": ""},
+        "8-execution-points": {"status": "pending", "upstream_version": "0.13.0", "notes": "BeforeTool, AfterTool, etc"}
+      }
+    },
+    "sessions": {
+      "description": "Session management and browser",
+      "features": {
+        "session-browser": {"status": "pending", "upstream_version": "0.17.0", "notes": "20-item pagination"},
+        "session-search": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "session-sort": {"status": "pending", "upstream_version": "0.17.0", "notes": "date/count/name"},
+        "session-resume": {"status": "pending", "upstream_version": "0.15.0", "notes": ""}
+      }
+    },
+    "models": {
+      "description": "Model configuration and routing",
+      "features": {
+        "model-router": {"status": "pending", "upstream_version": "0.12.0", "notes": "GA in 0.13.0"},
+        "thinking-level-enum": {"status": "pending", "upstream_version": "0.17.0", "notes": "Replaces thinkingBudget"},
+        "gemini-3-support": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "model-aliases": {"status": "pending", "upstream_version": "0.17.0", "notes": "pro, flash, flash-lite"}
+      }
+    },
+    "mcp": {
+      "description": "MCP tool discovery and integration",
+      "features": {
+        "mcp-status-tracking": {"status": "pending", "upstream_version": "0.17.0", "notes": "State machine"},
+        "sse-transport": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "streamable-http": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "oauth-detection": {"status": "pending", "upstream_version": "0.17.0", "notes": "www-authenticate headers"},
+        "lenient-json-validator": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "tool-filtering": {"status": "pending", "upstream_version": "0.17.0", "notes": "includeTools/excludeTools"}
+      }
+    },
+    "agents": {
+      "description": "Agent framework",
+      "features": {
+        "agent-registry": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "agent-executor": {"status": "pending", "upstream_version": "0.17.0", "notes": "timeout/max_turns"},
+        "codebase-investigator": {"status": "pending", "upstream_version": "0.12.0", "notes": "Deep analysis agent"},
+        "subagent-invocation": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "60s-grace-period": {"status": "pending", "upstream_version": "0.17.0", "notes": "Recovery before termination"}
+      }
+    },
+    "config": {
+      "description": "Configuration and permissions",
+      "features": {
+        "trust-permissions": {"status": "pending", "upstream_version": "0.17.0", "notes": ""},
+        "config-hierarchy": {"status": "pending", "upstream_version": "0.10.0", "notes": "Project > User > System"},
+        "validation-command": {"status": "pending", "upstream_version": "0.13.0", "notes": ""}
+      }
+    }
+  },
+  "breaking_changes": [
+    {"version": "0.13.0", "change": "Removed --all-files / -a flags (use @ syntax)"},
+    {"version": "0.13.0", "change": "useModelRouter defaults to true"},
+    {"version": "0.18.0", "change": "alternateBufferMode defaults to false"},
+    {"version": "0.17.0", "change": "Compress threshold changed to 0.5 for API key users"}
+  ]
+}
